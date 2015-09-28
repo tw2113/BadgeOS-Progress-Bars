@@ -79,9 +79,9 @@ class tw2113_BadgeOS_Progress_Bar_Loader {
 	 *
 	 * @return bool True if BadgeOS is available, false otherwise
 	 */
-	public static function meets_requirements() {
+	public function meets_requirements() {
 
-		if ( class_exists('BadgeOS') ) {
+		if ( $this->is_minimum_php_version( PHP_VERSION ) && class_exists( 'BadgeOS' ) ) {
 			return true;
 		}
 
