@@ -89,6 +89,29 @@ class tw2113_BadgeOS_Progress_Bar_Loader {
 
 	}
 
+	public function maybe_disable_plugin() {
+		if ( ! $this->meets_requirements()) {
+			if ( ! $this->is_minimum_php_version( PHP_VERSION ) ) {
+				echo '<div id="message" class="error">';
+				echo '<p>' . sprintf( __( 'BadgeOS Progress Bars requires PHP version 5.3.0 or greater and has been <a href="%s">deactivated</a>. Please contact your hosting provider about upgrading your hosting account.',
+				'badgeos-community' ), admin_url( 'plugins.php' ) ) . '</p>';
+				echo '</div>';
+			}
+
+			if ( ! class_exists( 'BadgeOS' ) ) {
+				echo '<div id="message" class="error">';
+				echo '<p>' . sprintf( __( 'BadgeOS Progress Bars requires BadgeOS 1.4.0 or greater and has been <a href="%s">deactivated</a>. Please install and activate BadgeOS and then reactivate this plugin.',
+				'badgeos_progress_bar' ), admin_url( 'plugins.php' ) ) . '</p>';
+				echo '</div>';
+			}
+
+			deactivate_plugins( $this->basename );
+		}
+	}
+
+	private function is_minimum_php_version( $version ) {
+		return version_compare( $this->minimum_version, $version, '<=' );
+	}
 }
 $say_yes_to_progress = new tw2113_BadgeOS_Progress_Bar_Loader();
 $say_yes_to_progress->do_hooks(); # Long live the Hook!
