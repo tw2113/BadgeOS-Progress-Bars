@@ -46,6 +46,7 @@ class tw2113_BadgeOS_Progress_Bar_Loader {
 	 */
 	public function do_hooks() {
 		add_action( 'plugins_loaded', array( $this, 'includes' ) );
+		add_action( 'admin_notices', array( $this, 'maybe_disable_plugin' ) );
 	}
 
 	/**
