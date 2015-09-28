@@ -22,7 +22,10 @@ Text Domain: badgeos_progress_bar
  TODO: Finish needed steps output.
 */
 
+
 class tw2113_BadgeOS_Progress_Bar_Loader {
+
+	public $minimum_version = '5.3.0';
 
 	/**
 	 * It's all happening.
