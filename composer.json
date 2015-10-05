@@ -1,0 +1,20 @@
+{
+  "name": "tw2113/BadgeOS-Progress-Bars",
+  "description": "Render progress bars for specific achievements and users.",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "wordpress",
+    "badgeos",
+    "progress",
+    "progress bars"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michael Beckwith",
+      "homepage": "http://trexthepirate.com/badgeos/",
+      "role": "Lead Developer"
+    }
+  ],
+  "homepage": "http://trexthepirate.com/badgeos/"
+}
